@@ -1,0 +1,99 @@
+<div class="my-container mx-auto border border-dark">
+    <div class="row g-0">
+        <!-- Profile image of product -->
+        <div class="col-4 py-4">
+            <div class="mt-2 d-flex justify-content-center align-items-center ">
+                <img src="../../assets/images/mobiles/phones/iphone11{{imageIndex}}.jpg" alt="iphone11" class="w-100">
+            </div>
+            <div class="image-thumbnails m-4 d-flex justify-content-between align-items-center">
+                <img src="../../assets/images/mobiles/phones/iphone11-a.jpg" alt="Thumbnails image" 
+                        (click)="imageIndex = '-a'">
+                <img src="../../assets/images/mobiles/phones/iphone11-b.jpg" alt="Thumbnails image"
+                        (click)="imageIndex = '-b'" >
+                <img src="../../assets/images/mobiles/phones/iphone11-c.jpg" alt="Thumbnails image" 
+                        (click)="imageIndex = '-c'">
+                <img src="../../assets/images/mobiles/phones/iphone11.jpg" alt="Thumbnails image" 
+                        (click)="imageIndex = ''">
+                <img src="../../assets/images/mobiles/phones/iphone11-d.jpg" alt="Thumbnails image" 
+                    (click)="imageIndex = '-d'">
+            </div>
+        </div>
+        <!-- Details of product -->
+        <div class="col-8 py-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Header</h2>
+                </div>
+
+                <div class="card-body">
+                    <h1 class="card-title text-success">Final Price
+                        <span class="text-primary">-20%</span>
+                    </h1>
+                    <h4 class="card-subtitle text-danger text-decoration-line-through">
+                        Original Price
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-subtitle my-2 text-primary"> 11 products are avalaible. </h6>
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-outline-success">Add to card</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text">Description</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action" *ngFor="let item of [1,1,1,1]">
+                            {{item}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Suggested Products -->
+    <div class="row g-0">
+        <div class="col-12 ps-5 pt-4 pb-3">
+            <h3 class="border border-secondary text-center py-2 my-rounded-corner w-25">
+                related products
+            </h3>
+        </div>
+        <div class="col-12">
+            <app-suggested-products ></app-suggested-products>
+        </div>
+    </div>
+    <!-- Review -->
+    <div class="row g-0 my-5">
+        <!-- Users Review -->
+        <div class="col p-3">
+            <h3>Give your review</h3>
+            <h5 class="mt-4"> Write your Rewiew</h5>
+            <div class="d-flex align-items-start">
+                <button class="btn btn-outline-secondary mt-4 me-5" type="button">Save Review</button>
+                <div>
+                    <h6 class="text-danger mt-4">Login first, then enter the review</h6>
+                    <h6 class="text-danger">Review cannot Be Empty</h6>
+                    <h6 class="text-success">Review Saved Succeesfully</h6>
+                </div>
+            </div>
+        </div>
+        <!-- Other Review -->
+        <div class="col p-3">
+            <h3>Others Review</h3>
+            <h6 *ngIf="1">No Review yet!</h6>
+            <div class="card mt-3" *ngFor="let review of [1,2,3,4]">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="card-text">
+                        M@G 
+                        Michel
+                    </div>
+                    <div class="card-text fst-italic">
+                        Reviewed On: <span class="fw-bold">{{ "20 oct 2023" | date:"dd-MMM-yyyy" }}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">Review</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
